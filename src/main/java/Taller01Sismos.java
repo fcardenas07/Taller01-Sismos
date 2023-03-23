@@ -8,19 +8,19 @@ public class Taller01Sismos {
     }
 
     private static void mostrarMenu(double[][] lecturasSismos) {
-        int opcion;
-        do {
-            System.out.print(menu());
-            opcion = ingresarNumero();
-            switch (opcion) {
-                case 1 -> lecturasSismos = llenarArreglo();
-                case 2 -> mostrarSismoMayorMagnitud(lecturasSismos);
-                case 3 -> mostrarSismosMagnitudMayorA5(lecturasSismos);
-                case 4 -> enviarSMS(lecturasSismos);
-                case 5 -> mostrarLecturas(lecturasSismos);
+        System.out.print(menu());
+        int opcionUsuario = ingresarNumero();
+        switch (opcionUsuario) {
+            case 1 -> lecturasSismos = llenarArreglo();
+            case 2 -> mostrarSismoMayorMagnitud(lecturasSismos);
+            case 3 -> mostrarSismosMagnitudMayorA5(lecturasSismos);
+            case 4 -> enviarSMS(lecturasSismos);
+            case 5 -> mostrarLecturas(lecturasSismos);
+            default -> {
+                return;
             }
-
-        } while (opcion != 6);
+        }
+        mostrarMenu(lecturasSismos);
     }
 
     private static void enviarSMS(double[][] lecturasSismos) {
@@ -118,6 +118,7 @@ public class Taller01Sismos {
     private static String mensajeSMS() {
         return "Alerta!!! Se debe evacuar zona costera!";
     }
+
     private static String menu() {
         return """
                 MENU SISMOS
