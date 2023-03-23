@@ -9,8 +9,8 @@ public class Taller01Sismos {
 
     private static void mostrarMenu(double[][] lecturasSismos) {
         System.out.print(menu());
-        int opcionUsuario = ingresarNumero();
-        switch (opcionUsuario) {
+        int opcionIngresada = ingresarNumero();
+        switch (opcionIngresada) {
             case 1 -> lecturasSismos = llenarArreglo();
             case 2 -> mostrarSismoMayorMagnitud(lecturasSismos);
             case 3 -> mostrarSismosMagnitudMayorA5(lecturasSismos);
