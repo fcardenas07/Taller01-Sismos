@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Taller01Sismos {
     public static void main(String[] args) {
         double[][] lecturasSismos = new double[7][10];
-        mostrarLecturas(lecturasSismos);
         mostrarMenu(lecturasSismos);
     }
 
@@ -18,9 +17,10 @@ public class Taller01Sismos {
                 case 2 -> mostrarSismoMayorMagnitud(lecturasSismos);
                 case 3 -> mostrarSismosMagnitudMayorA5(lecturasSismos);
                 case 4 -> enviarSMS(lecturasSismos);
+                case 5 -> mostrarLecturas(lecturasSismos);
             }
 
-        } while (opcion != 5);
+        } while (opcion != 6);
     }
 
     private static void enviarSMS(double[][] lecturasSismos) {
@@ -86,7 +86,7 @@ public class Taller01Sismos {
     }
 
     private static int validarOpcion(int numero) {
-        if (numero < 1 || numero > 5) {
+        if (numero < 1 || numero > 6) {
             System.out.println("Ingrese una opcion valida");
             return ingresarNumero();
         }
@@ -125,7 +125,8 @@ public class Taller01Sismos {
                 2. Mostrar sismo de mayor magnitud
                 3. Contar sismos mayores o iguales a 5.0
                 4. Enviar SMS por cada sismo mayor o igual a 7.0
-                5. Salir
+                5. Mostrar Lecturas
+                6. Salir
                 -> Ingrese una opcion:
                 """;
     }
